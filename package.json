@@ -1,0 +1,14 @@
+{
+  "name": "tasklist",
+  "version": "1.0.0",
+  "description": "Task list",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "Matt Glenn",
+  "license": "MIT",
+  "dependencies": {
+    "electron": "^1.7.9"
+  }
+}
