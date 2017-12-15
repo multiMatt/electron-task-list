@@ -12,7 +12,13 @@ function saveFile(){
             return
         }
 
-        var content = document.getElementById('tasks').innerHTML
+        //var content = document.getElementById('tasks').innerHTML
+        var content = new Array();
+        var table = document.getElementsByTagName('ul')
+        var li = table[0].getElementsByTagName('li');
+        for (var i = 0; i < li.length; i++) {
+          content.push(li[i].innerText)
+        }
 
         fs.writeFile(filename, content, (err)=>{
             if(err) console.log(err)
@@ -43,8 +49,9 @@ function readFile(filepath){
             return
         }
         console.log(data)
-        var lineByline = data.split('\n');
+        var content = data.split(', \n');
         var table = document.querySelector('ul')
-        table.innerHTML += '<li class="collection-item">' + lineByline + '</li>'
+        table.innerHTML += '<li class="collection-item">' + content + '</li>'
+
     })
 }
